@@ -1,0 +1,345 @@
+@font-face {
+    font-family: cantarell;
+    src: url(../fonts/Cantarell-Regular.ttf);
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: raleway;
+    src: url(../fonts/Raleway-Regular.ttf);
+    font-style: normal;
+    font-weight: normal;
+}
+:root {
+    --black: #333333;
+    --red: #C1272D;
+    --shaded-red: #DF9595;
+    --green: #00751F;
+    --white: #FFFFFF;
+    --twhite: rgba(155, 155, 155, 0.678);
+    box-sizing: border-box;
+}
+*{
+    box-sizing: inherit;
+}
+img {
+    max-width: 100%;
+}
+body {
+    font-family: raleway, Verdana, Geneva, Tahoma, sans-serif ;
+    font-size: 1rem;
+    color: var(--black);
+}
+header{
+    background-color: var(--green);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    padding: 20px;
+    width: 100%;
+    height: 50px;
+    color: white;
+}
+header h1{
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+}
+#mainNav {
+    background-color: var(--green);
+    top:50px;
+    position: absolute;
+    width: 100%;
+    display: none;
+    left: 0;
+
+}
+#menuToggle {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+}
+header #mainNav ul{
+    list-style: none;
+    color: white;
+    margin: 0;
+    padding: 0 0 0 20px;
+}
+header ul li{
+    padding: 0 5px;
+}
+header ul li a{
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+header ul li a:hover{
+    background-color: #ffffff84;
+}
+header ul li a:visited{
+    color: yellow;
+}
+body>section{
+    padding: 70px 20px;
+    background: url(../images/image-3.jpg) center center / cover no-repeat fixed;
+    min-height: 100vh;
+}
+#mainContent{
+    background-color: var(--twhite);
+    padding: 20px;
+}
+#pageContent.index,#pageContent.cv{
+    display: flex;
+    flex-direction: column;
+}
+#pageContent.index #leftRow{
+    padding: 20px;
+}
+#pageContent.index #leftRow img{
+    border-radius: 50%;
+}
+#pageContent.cv {
+    display: flex;
+}
+#pageContent.cv ul{
+    list-style: none;
+}
+#pageContent.cv ul li span{
+    color: var(--red);
+    font-size: 1.5em;
+}
+#pageContent.cv #rightCol h1{
+    font-size: medium;
+}
+#pageContent.index #rightRow,#pageContent.cv #leftCol,#pageContent.cv #rightCol {
+    padding: 20px;
+    background-color: var(--twhite);
+    border-radius: 5px;
+}
+#pageContent.cv #leftCol{
+    background-color: var(--shaded-red);
+    display: grid;
+    grid-template-rows: 1fr 1fr 20px;
+}
+#pageContent.cv #leftCol,#pageContent.cv #rightCol{
+    margin: 10px 0;
+}
+#pageContent.cv #leftCol img{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+#pageContent.cv #leftCol div:first-child{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+#pageContent.cv #leftCol div:nth-child(2){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#pageContent.galleries #mainContent ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0;
+    margin: 0;
+}
+#pageContent.galleries #mainContent ul li{
+    background-color: var(--white);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+}
+#pageContent.galleries #mainContent ul li:hover{
+    background-color:var(--shaded-red);
+}
+#pageContent.galleries #mainContent a{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--black);
+}
+#pageContent.galleries ul li a img{
+    border: solid var(--black) 2px;
+}
+#pageContent.galleries #mainContent a p,#pageContent.galleries #mainContent a h1,#pageContent.galleries #mainContent a img,#mainContent.images ul li figure img{
+    width: 100%;
+}
+#mainContent.images ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+#mainContent.images ul li{
+    padding: 10px;
+}
+#mainContent.images ul li figure{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#mainContent.images ul li figure img{
+    border: solid var(--black) 2px;
+}
+#mainContent.images ul li figure figcaption{
+    display: flex;
+    justify-content: center;
+    font-size: medium;
+    font-weight: bold;
+    color: yellow;
+}
+#mainContent.about{
+    background-color: var(--shaded-red);
+}
+
+
+/* Mise en forme de ma page de formation*/
+#pageContent.formation #mainContent {
+    color: var(--white);
+}
+#pageContent.formation #mainContent>div{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+}
+#pageContent.formation #mainContent>div section {
+    background-color: var(--shaded-red);
+    padding: 20px;
+}
+#pageContent.formation #mainContent>div section dl div{
+    display: flex;
+    justify-content: space-between;
+
+}
+#pageContent.formation #mainContent>div section dl div dd{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+#pageContent.formation #mainContent>div section dl div dd img{
+    width: 50px;
+}
+#pageContent.formation #mainContent>div section dl dt{
+    color: yellow;
+    font-size: x-large;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+#pageContent.formation #mainContent p:first-of-type{
+    display: grid;
+    padding-top: 50px;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+#pageContent.formation #mainContent p:first-of-type img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+footer{
+    background-color: var(--green);
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: white;
+    padding: 10px 0;
+}
+footer p{
+    margin: 0;
+    padding: 0;
+    font-size: smaller;
+}
+
+@media screen and (min-width:768px) {
+    #mainNav {
+        position: static;
+        background-color: transparent;
+        display: block !important;
+        width: 50%;
+    }
+    #mainNav ul {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: smaller;
+    }
+    #menuToggle{
+        display: none;
+    }
+    #pageContent.index,#pageContent.cv{
+        flex-direction: row;
+    }
+    #pageContent.cv {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #mainContent.images ul{
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+    }
+    #pageContent.galleries #mainContent ul{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    /* Mise en forme de ma page de formation*/
+    #pageContent.formation #mainContent {
+        color: var(--white);
+    }
+    #pageContent.formation #mainContent>div{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+    }
+    #pageContent.formation #mainContent>div section {
+        background-color: var(--shaded-red);
+        padding: 20px;
+    }
+    #pageContent.formation #mainContent>div section dl div{
+        display: flex;
+        justify-content: space-between;
+    
+    }
+    #pageContent.formation #mainContent>div section dl div dd{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #pageContent.formation #mainContent>div section dl div dd img{
+        width: 50px;
+    }
+    #pageContent.formation #mainContent>div section dl dt{
+        color: yellow;
+        font-size: x-large;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+    }
+    #pageContent.formation #mainContent p:first-of-type{
+        display: grid;
+        padding-top: 50px;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+    }
+    #pageContent.formation #mainContent p:first-of-type img{
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+    }
+}
